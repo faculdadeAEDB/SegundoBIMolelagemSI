@@ -4,12 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c934297b27c14a8ba23197fe0a24aa8f" Name="Diagram1">
+      <Diagram DiagramId="fb25d056963c474d993cd4f9090220a8" Name="Diagram1">
         <EntityTypeShape EntityType="Model.Alguel" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Imovel" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Inquilino" Width="1.5" PointX="4.875" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Inquilino" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Pagamento" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Proprietario" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Taxa" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
         <AssociationConnector Association="Model.FK_Alguel_Imovel" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_Alguel_Inquilino" ManuallyRouted="false" />

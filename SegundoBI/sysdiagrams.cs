@@ -12,13 +12,12 @@ namespace SegundoBI
     using System;
     using System.Collections.Generic;
     
-    public partial class Taxa
+    public partial class sysdiagrams
     {
-        public int TaxaID { get; set; }
-        public string TaxaNome { get; set; }
-        public int TaxaValor { get; set; }
-        public int TaxaIDPagamento { get; set; }
-    
-        public virtual Pagamento Pagamento { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

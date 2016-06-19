@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SegundoBI
 {
-    partial class Proprietario
+    public partial class Proprietario
     {
         public void incluir()
         {
             Sistema_ImoveisEntities oDB = new Sistema_ImoveisEntities();
-            oDB.Proprietario.add(this);
+            oDB.Proprietario.Add(this);
             oDB.SaveChanges();
             oDB.Dispose();
         }
@@ -20,7 +20,7 @@ namespace SegundoBI
         {
             using (Sistema_ImoveisEntities oDB = new Sistema_ImoveisEntities())
             {
-                oDB.Entry(this).State = System.Data.Entity.EntityState
+                oDB.Entry(this).State = System.Data.Entity.EntityState.Modified;
             }
         }
     }
