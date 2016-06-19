@@ -16,5 +16,10 @@ namespace SegundoBI.views
         {
             InitializeComponent();
         }
+
+        private void ImoBtnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -101,9 +101,6 @@
     <Compile Include="Proprietario.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Taxa.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -134,6 +131,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="views\frmImoveis.resx">
+      <DependentUpon>frmImoveis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmInquilino.resx">
+      <DependentUpon>frmInquilino.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\frmProprietario.resx">
       <DependentUpon>frmProprietario.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +149,20 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Alguel.datasource" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Imovel.datasource" />
+    <None Include="Properties\DataSources\Inquilino.datasource" />
+    <None Include="Properties\DataSources\Pagamento.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Proprietario.datasource" />
+    <None Include="Properties\DataSources\SegundoBI.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\SegundoBI.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\SegundoBI.views.frmImoveis.datasource" />
+    <None Include="Properties\DataSources\SegundoBI.views.frmInquilino.datasource" />
+    <None Include="Properties\DataSources\SegundoBI.views.frmProprietario.datasource" />
+    <None Include="Properties\DataSources\Sistema_ImoveisEntities.datasource" />
+    <None Include="Properties\DataSources\Taxa.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

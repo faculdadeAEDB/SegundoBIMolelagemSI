@@ -30,7 +30,6 @@ namespace SegundoBI
         public DbSet<Inquilino> Inquilino { get; set; }
         public DbSet<Pagamento> Pagamento { get; set; }
         public DbSet<Proprietario> Proprietario { get; set; }
-        public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<Taxa> Taxa { get; set; }
     }
 }
