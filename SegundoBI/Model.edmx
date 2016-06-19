@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Alguel">
+          <Key>
+            <PropertyRef Name="AluID" />
+          </Key>
+          <Property Name="AluValor" Type="int" Nullable="false" />
+          <Property Name="AluDataIni" Type="date" Nullable="false" />
+          <Property Name="AluID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AluDataFim" Type="date" Nullable="false" />
+          <Property Name="AluIDImo" Type="int" Nullable="false" />
+          <Property Name="AluIDInq" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Imovel">
+          <Key>
+            <PropertyRef Name="ImoID" />
+          </Key>
+          <Property Name="ImoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImoTipo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ImoEndereco" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ImoBairro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImoCidade" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ImoIDPro" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inquilino">
+          <Key>
+            <PropertyRef Name="InqID" />
+          </Key>
+          <Property Name="InqNome" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="InqID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InqEndereco" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="InqBairro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="InqCidade" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="InqTelefone" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="InqCPF" Type="varchar" MaxLength="14" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pagamento">
+          <Key>
+            <PropertyRef Name="PagID" />
+          </Key>
+          <Property Name="PagIDAlu" Type="int" Nullable="false" />
+          <Property Name="PagData" Type="int" Nullable="false" />
+          <Property Name="PagID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Proprietario">
+          <Key>
+            <PropertyRef Name="ProID" />
+          </Key>
+          <Property Name="ProNome" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="ProID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProEndereco" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ProBairro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProCidade" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ProTelefone" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="ProCPF" Type="varchar" MaxLength="14" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Taxa">
+          <Key>
+            <PropertyRef Name="TaxaID" />
+          </Key>
+          <Property Name="TaxaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TaxaNome" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="TaxaValor" Type="int" Nullable="false" />
+          <Property Name="TaxaIDPagamento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Alguel" EntityType="Self.Alguel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Imovel" EntityType="Self.Imovel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inquilino" EntityType="Self.Inquilino" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pagamento" EntityType="Self.Pagamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proprietario" EntityType="Self.Proprietario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Taxa" EntityType="Self.Taxa" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Alguel">
+          <Key>
+            <PropertyRef Name="AluID" />
+          </Key>
+          <Property Name="AluValor" Type="Int32" Nullable="false" />
+          <Property Name="AluDataIni" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="AluID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AluDataFim" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="AluIDImo" Type="Int32" Nullable="false" />
+          <Property Name="AluIDInq" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Imovel">
+          <Key>
+            <PropertyRef Name="ImoID" />
+          </Key>
+          <Property Name="ImoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImoTipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImoEndereco" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImoBairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImoCidade" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImoIDPro" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inquilino">
+          <Key>
+            <PropertyRef Name="InqID" />
+          </Key>
+          <Property Name="InqNome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InqID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InqEndereco" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InqBairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InqCidade" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InqTelefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InqCPF" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pagamento">
+          <Key>
+            <PropertyRef Name="PagID" />
+          </Key>
+          <Property Name="PagIDAlu" Type="Int32" Nullable="false" />
+          <Property Name="PagData" Type="Int32" Nullable="false" />
+          <Property Name="PagID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Proprietario">
+          <Key>
+            <PropertyRef Name="ProID" />
+          </Key>
+          <Property Name="ProNome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProEndereco" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProBairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProCidade" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProTelefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProCPF" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Taxa">
+          <Key>
+            <PropertyRef Name="TaxaID" />
+          </Key>
+          <Property Name="TaxaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TaxaNome" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxaValor" Type="Int32" Nullable="false" />
+          <Property Name="TaxaIDPagamento" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Sistema_Imoveis_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Alguel" EntityType="Self.Alguel" />
+          <EntitySet Name="Imovel" EntityType="Self.Imovel" />
+          <EntitySet Name="Inquilino" EntityType="Self.Inquilino" />
+          <EntitySet Name="Pagamento" EntityType="Self.Pagamento" />
+          <EntitySet Name="Proprietario" EntityType="Self.Proprietario" />
+          <EntitySet Name="Taxa" EntityType="Self.Taxa" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Sistema_Imoveis_Entities">
+          <EntitySetMapping Name="Alguel">
+            <EntityTypeMapping TypeName="Model.Alguel">
+              <MappingFragment StoreEntitySet="Alguel">
+                <ScalarProperty Name="AluValor" ColumnName="AluValor" />
+                <ScalarProperty Name="AluDataIni" ColumnName="AluDataIni" />
+                <ScalarProperty Name="AluID" ColumnName="AluID" />
+                <ScalarProperty Name="AluDataFim" ColumnName="AluDataFim" />
+                <ScalarProperty Name="AluIDImo" ColumnName="AluIDImo" />
+                <ScalarProperty Name="AluIDInq" ColumnName="AluIDInq" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Imovel">
+            <EntityTypeMapping TypeName="Model.Imovel">
+              <MappingFragment StoreEntitySet="Imovel">
+                <ScalarProperty Name="ImoID" ColumnName="ImoID" />
+                <ScalarProperty Name="ImoTipo" ColumnName="ImoTipo" />
+                <ScalarProperty Name="ImoEndereco" ColumnName="ImoEndereco" />
+                <ScalarProperty Name="ImoBairro" ColumnName="ImoBairro" />
+                <ScalarProperty Name="ImoCidade" ColumnName="ImoCidade" />
+                <ScalarProperty Name="ImoIDPro" ColumnName="ImoIDPro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inquilino">
+            <EntityTypeMapping TypeName="Model.Inquilino">
+              <MappingFragment StoreEntitySet="Inquilino">
+                <ScalarProperty Name="InqNome" ColumnName="InqNome" />
+                <ScalarProperty Name="InqID" ColumnName="InqID" />
+                <ScalarProperty Name="InqEndereco" ColumnName="InqEndereco" />
+                <ScalarProperty Name="InqBairro" ColumnName="InqBairro" />
+                <ScalarProperty Name="InqCidade" ColumnName="InqCidade" />
+                <ScalarProperty Name="InqTelefone" ColumnName="InqTelefone" />
+                <ScalarProperty Name="InqCPF" ColumnName="InqCPF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pagamento">
+            <EntityTypeMapping TypeName="Model.Pagamento">
+              <MappingFragment StoreEntitySet="Pagamento">
+                <ScalarProperty Name="PagIDAlu" ColumnName="PagIDAlu" />
+                <ScalarProperty Name="PagData" ColumnName="PagData" />
+                <ScalarProperty Name="PagID" ColumnName="PagID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proprietario">
+            <EntityTypeMapping TypeName="Model.Proprietario">
+              <MappingFragment StoreEntitySet="Proprietario">
+                <ScalarProperty Name="ProNome" ColumnName="ProNome" />
+                <ScalarProperty Name="ProID" ColumnName="ProID" />
+                <ScalarProperty Name="ProEndereco" ColumnName="ProEndereco" />
+                <ScalarProperty Name="ProBairro" ColumnName="ProBairro" />
+                <ScalarProperty Name="ProCidade" ColumnName="ProCidade" />
+                <ScalarProperty Name="ProTelefone" ColumnName="ProTelefone" />
+                <ScalarProperty Name="ProCPF" ColumnName="ProCPF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Taxa">
+            <EntityTypeMapping TypeName="Model.Taxa">
+              <MappingFragment StoreEntitySet="Taxa">
+                <ScalarProperty Name="TaxaID" ColumnName="TaxaID" />
+                <ScalarProperty Name="TaxaNome" ColumnName="TaxaNome" />
+                <ScalarProperty Name="TaxaValor" ColumnName="TaxaValor" />
+                <ScalarProperty Name="TaxaIDPagamento" ColumnName="TaxaIDPagamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
