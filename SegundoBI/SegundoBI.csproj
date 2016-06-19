@@ -134,6 +134,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="views\frmInquilino.resx">
+      <DependentUpon>frmInquilino.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\frmProprietario.resx">
       <DependentUpon>frmProprietario.cs</DependentUpon>
     </EmbeddedResource>
