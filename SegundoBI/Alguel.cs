@@ -14,11 +14,22 @@ namespace SegundoBI
     
     public partial class Alguel
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Alguel()
+        {
+            this.Pagamento = new HashSet<Pagamento>();
+        }
+    
         public int AluValor { get; set; }
         public System.DateTime AluDataIni { get; set; }
         public int AluID { get; set; }
         public System.DateTime AluDataFim { get; set; }
         public int AluIDImo { get; set; }
         public int AluIDInq { get; set; }
+    
+        public virtual Imovel Imovel { get; set; }
+        public virtual Inquilino Inquilino { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pagamento> Pagamento { get; set; }
     }
 }

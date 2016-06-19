@@ -68,6 +68,66 @@
           <Property Name="TaxaValor" Type="int" Nullable="false" />
           <Property Name="TaxaIDPagamento" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Alguel_Imovel">
+          <End Role="Imovel" Type="Self.Imovel" Multiplicity="1" />
+          <End Role="Alguel" Type="Self.Alguel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Imovel">
+              <PropertyRef Name="ImoID" />
+            </Principal>
+            <Dependent Role="Alguel">
+              <PropertyRef Name="AluIDImo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alguel_Inquilino">
+          <End Role="Inquilino" Type="Self.Inquilino" Multiplicity="1" />
+          <End Role="Alguel" Type="Self.Alguel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inquilino">
+              <PropertyRef Name="InqID" />
+            </Principal>
+            <Dependent Role="Alguel">
+              <PropertyRef Name="AluIDInq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Imovel_Proprietario">
+          <End Role="Proprietario" Type="Self.Proprietario" Multiplicity="1" />
+          <End Role="Imovel" Type="Self.Imovel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proprietario">
+              <PropertyRef Name="ProID" />
+            </Principal>
+            <Dependent Role="Imovel">
+              <PropertyRef Name="ImoIDPro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pagamento_Alguel">
+          <End Role="Alguel" Type="Self.Alguel" Multiplicity="1" />
+          <End Role="Pagamento" Type="Self.Pagamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alguel">
+              <PropertyRef Name="AluID" />
+            </Principal>
+            <Dependent Role="Pagamento">
+              <PropertyRef Name="PagIDAlu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Taxa_Pagamento">
+          <End Role="Pagamento" Type="Self.Pagamento" Multiplicity="1" />
+          <End Role="Taxa" Type="Self.Taxa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pagamento">
+              <PropertyRef Name="PagID" />
+            </Principal>
+            <Dependent Role="Taxa">
+              <PropertyRef Name="TaxaIDPagamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Alguel" EntityType="Self.Alguel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Imovel" EntityType="Self.Imovel" Schema="dbo" store:Type="Tables" />
@@ -75,6 +135,26 @@
           <EntitySet Name="Pagamento" EntityType="Self.Pagamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proprietario" EntityType="Self.Proprietario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Taxa" EntityType="Self.Taxa" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Alguel_Imovel" Association="Self.FK_Alguel_Imovel">
+            <End Role="Imovel" EntitySet="Imovel" />
+            <End Role="Alguel" EntitySet="Alguel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alguel_Inquilino" Association="Self.FK_Alguel_Inquilino">
+            <End Role="Inquilino" EntitySet="Inquilino" />
+            <End Role="Alguel" EntitySet="Alguel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Imovel_Proprietario" Association="Self.FK_Imovel_Proprietario">
+            <End Role="Proprietario" EntitySet="Proprietario" />
+            <End Role="Imovel" EntitySet="Imovel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pagamento_Alguel" Association="Self.FK_Pagamento_Alguel">
+            <End Role="Alguel" EntitySet="Alguel" />
+            <End Role="Pagamento" EntitySet="Pagamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Taxa_Pagamento" Association="Self.FK_Taxa_Pagamento">
+            <End Role="Pagamento" EntitySet="Pagamento" />
+            <End Role="Taxa" EntitySet="Taxa" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -91,6 +171,9 @@
           <Property Name="AluDataFim" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="AluIDImo" Type="Int32" Nullable="false" />
           <Property Name="AluIDInq" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Imovel" Relationship="Self.FK_Alguel_Imovel" FromRole="Alguel" ToRole="Imovel" />
+          <NavigationProperty Name="Inquilino" Relationship="Self.FK_Alguel_Inquilino" FromRole="Alguel" ToRole="Inquilino" />
+          <NavigationProperty Name="Pagamento" Relationship="Self.FK_Pagamento_Alguel" FromRole="Alguel" ToRole="Pagamento" />
         </EntityType>
         <EntityType Name="Imovel">
           <Key>
@@ -102,6 +185,8 @@
           <Property Name="ImoBairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ImoCidade" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ImoIDPro" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Alguel" Relationship="Self.FK_Alguel_Imovel" FromRole="Imovel" ToRole="Alguel" />
+          <NavigationProperty Name="Proprietario" Relationship="Self.FK_Imovel_Proprietario" FromRole="Imovel" ToRole="Proprietario" />
         </EntityType>
         <EntityType Name="Inquilino">
           <Key>
@@ -114,6 +199,7 @@
           <Property Name="InqCidade" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="InqTelefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="InqCPF" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Alguel" Relationship="Self.FK_Alguel_Inquilino" FromRole="Inquilino" ToRole="Alguel" />
         </EntityType>
         <EntityType Name="Pagamento">
           <Key>
@@ -122,6 +208,8 @@
           <Property Name="PagIDAlu" Type="Int32" Nullable="false" />
           <Property Name="PagData" Type="Int32" Nullable="false" />
           <Property Name="PagID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Alguel" Relationship="Self.FK_Pagamento_Alguel" FromRole="Pagamento" ToRole="Alguel" />
+          <NavigationProperty Name="Taxa" Relationship="Self.FK_Taxa_Pagamento" FromRole="Pagamento" ToRole="Taxa" />
         </EntityType>
         <EntityType Name="Proprietario">
           <Key>
@@ -134,6 +222,7 @@
           <Property Name="ProCidade" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProTelefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProCPF" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Imovel" Relationship="Self.FK_Imovel_Proprietario" FromRole="Proprietario" ToRole="Imovel" />
         </EntityType>
         <EntityType Name="Taxa">
           <Key>
@@ -143,21 +232,102 @@
           <Property Name="TaxaNome" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TaxaValor" Type="Int32" Nullable="false" />
           <Property Name="TaxaIDPagamento" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pagamento" Relationship="Self.FK_Taxa_Pagamento" FromRole="Taxa" ToRole="Pagamento" />
         </EntityType>
-        <EntityContainer Name="Sistema_Imoveis_Entities" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK_Alguel_Imovel">
+          <End Role="Imovel" Type="Self.Imovel" Multiplicity="1" />
+          <End Role="Alguel" Type="Self.Alguel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Imovel">
+              <PropertyRef Name="ImoID" />
+            </Principal>
+            <Dependent Role="Alguel">
+              <PropertyRef Name="AluIDImo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alguel_Inquilino">
+          <End Role="Inquilino" Type="Self.Inquilino" Multiplicity="1" />
+          <End Role="Alguel" Type="Self.Alguel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inquilino">
+              <PropertyRef Name="InqID" />
+            </Principal>
+            <Dependent Role="Alguel">
+              <PropertyRef Name="AluIDInq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pagamento_Alguel">
+          <End Role="Alguel" Type="Self.Alguel" Multiplicity="1" />
+          <End Role="Pagamento" Type="Self.Pagamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alguel">
+              <PropertyRef Name="AluID" />
+            </Principal>
+            <Dependent Role="Pagamento">
+              <PropertyRef Name="PagIDAlu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Imovel_Proprietario">
+          <End Role="Proprietario" Type="Self.Proprietario" Multiplicity="1" />
+          <End Role="Imovel" Type="Self.Imovel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proprietario">
+              <PropertyRef Name="ProID" />
+            </Principal>
+            <Dependent Role="Imovel">
+              <PropertyRef Name="ImoIDPro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Taxa_Pagamento">
+          <End Role="Pagamento" Type="Self.Pagamento" Multiplicity="1" />
+          <End Role="Taxa" Type="Self.Taxa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pagamento">
+              <PropertyRef Name="PagID" />
+            </Principal>
+            <Dependent Role="Taxa">
+              <PropertyRef Name="TaxaIDPagamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Sistema_ImoveisEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Alguel" EntityType="Self.Alguel" />
           <EntitySet Name="Imovel" EntityType="Self.Imovel" />
           <EntitySet Name="Inquilino" EntityType="Self.Inquilino" />
           <EntitySet Name="Pagamento" EntityType="Self.Pagamento" />
           <EntitySet Name="Proprietario" EntityType="Self.Proprietario" />
           <EntitySet Name="Taxa" EntityType="Self.Taxa" />
+          <AssociationSet Name="FK_Alguel_Imovel" Association="Self.FK_Alguel_Imovel">
+            <End Role="Imovel" EntitySet="Imovel" />
+            <End Role="Alguel" EntitySet="Alguel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alguel_Inquilino" Association="Self.FK_Alguel_Inquilino">
+            <End Role="Inquilino" EntitySet="Inquilino" />
+            <End Role="Alguel" EntitySet="Alguel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pagamento_Alguel" Association="Self.FK_Pagamento_Alguel">
+            <End Role="Alguel" EntitySet="Alguel" />
+            <End Role="Pagamento" EntitySet="Pagamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Imovel_Proprietario" Association="Self.FK_Imovel_Proprietario">
+            <End Role="Proprietario" EntitySet="Proprietario" />
+            <End Role="Imovel" EntitySet="Imovel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Taxa_Pagamento" Association="Self.FK_Taxa_Pagamento">
+            <End Role="Pagamento" EntitySet="Pagamento" />
+            <End Role="Taxa" EntitySet="Taxa" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Sistema_Imoveis_Entities">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Sistema_ImoveisEntities">
           <EntitySetMapping Name="Alguel">
             <EntityTypeMapping TypeName="Model.Alguel">
               <MappingFragment StoreEntitySet="Alguel">

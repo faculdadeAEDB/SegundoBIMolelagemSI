@@ -18,5 +18,7 @@ namespace SegundoBI
         public string TaxaNome { get; set; }
         public int TaxaValor { get; set; }
         public int TaxaIDPagamento { get; set; }
+    
+        public virtual Pagamento Pagamento { get; set; }
     }
 }

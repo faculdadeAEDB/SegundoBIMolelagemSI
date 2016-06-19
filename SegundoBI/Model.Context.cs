@@ -13,10 +13,10 @@ namespace SegundoBI
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Sistema_Imoveis_Entities : DbContext
+    public partial class Sistema_ImoveisEntities : DbContext
     {
-        public Sistema_Imoveis_Entities()
-            : base("name=Sistema_Imoveis_Entities")
+        public Sistema_ImoveisEntities()
+            : base("name=Sistema_ImoveisEntities")
         {
         }
     

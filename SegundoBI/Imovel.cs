@@ -14,11 +14,21 @@ namespace SegundoBI
     
     public partial class Imovel
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Imovel()
+        {
+            this.Alguel = new HashSet<Alguel>();
+        }
+    
         public int ImoID { get; set; }
         public string ImoTipo { get; set; }
         public string ImoEndereco { get; set; }
         public string ImoBairro { get; set; }
         public string ImoCidade { get; set; }
         public int ImoIDPro { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Alguel> Alguel { get; set; }
+        public virtual Proprietario Proprietario { get; set; }
     }
 }

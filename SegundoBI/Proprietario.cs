@@ -14,6 +14,12 @@ namespace SegundoBI
     
     public partial class Proprietario
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Proprietario()
+        {
+            this.Imovel = new HashSet<Imovel>();
+        }
+    
         public string ProNome { get; set; }
         public int ProID { get; set; }
         public string ProEndereco { get; set; }
@@ -21,5 +27,8 @@ namespace SegundoBI
         public string ProCidade { get; set; }
         public string ProTelefone { get; set; }
         public string ProCPF { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Imovel> Imovel { get; set; }
     }
 }

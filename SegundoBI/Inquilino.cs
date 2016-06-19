@@ -14,6 +14,12 @@ namespace SegundoBI
     
     public partial class Inquilino
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Inquilino()
+        {
+            this.Alguel = new HashSet<Alguel>();
+        }
+    
         public string InqNome { get; set; }
         public int InqID { get; set; }
         public string InqEndereco { get; set; }
@@ -21,5 +27,8 @@ namespace SegundoBI
         public string InqCidade { get; set; }
         public string InqTelefone { get; set; }
         public string InqCPF { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Alguel> Alguel { get; set; }
     }
 }

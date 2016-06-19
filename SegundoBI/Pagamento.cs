@@ -14,8 +14,18 @@ namespace SegundoBI
     
     public partial class Pagamento
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Pagamento()
+        {
+            this.Taxa = new HashSet<Taxa>();
+        }
+    
         public int PagIDAlu { get; set; }
         public int PagData { get; set; }
         public int PagID { get; set; }
+    
+        public virtual Alguel Alguel { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Taxa> Taxa { get; set; }
     }
 }
