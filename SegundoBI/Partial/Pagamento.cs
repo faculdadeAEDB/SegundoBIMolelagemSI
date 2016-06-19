@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SegundoBI
 {
-    public partial class Imovel
+    public partial class Pagamento
     {
         public void Incluir()
         {
             Sistema_ImoveisEntities oDB = new Sistema_ImoveisEntities();
-            oDB.Imovel.Add(this);
+            oDB.Pagamento.Add(this);
             oDB.SaveChanges();
             oDB.Dispose();
         }
@@ -25,13 +25,13 @@ namespace SegundoBI
             }
         }
 
-        public static void Excluir (int Codigo)
+        public static void Excluir(int Codigo)
         {
             using (Sistema_ImoveisEntities oDB = new Sistema_ImoveisEntities())
             {
-                Imovel oImovel = new Imovel();
-                oDB.Entry(oImovel).State = System.Data.Entity.EntityState.Deleted;
-                oDB.Imovel.Remove(oImovel);
+                Pagamento oPagamento = new Pagamento();
+                oDB.Entry(oPagamento).State = System.Data.Entity.EntityState.Deleted;
+                oDB.Pagamento.Remove(oPagamento);
                 oDB.SaveChanges();
             }
         }

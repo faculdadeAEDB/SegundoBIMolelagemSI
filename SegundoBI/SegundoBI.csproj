@@ -90,7 +90,11 @@
     <Compile Include="Pagamento.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partial\Alguel.cs" />
     <Compile Include="Partial\Imovel.cs" />
+    <Compile Include="Partial\Inquilino.cs" />
+    <Compile Include="Partial\Pagamento.cs" />
+    <Compile Include="Partial\Taxa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proprietario.cs">
