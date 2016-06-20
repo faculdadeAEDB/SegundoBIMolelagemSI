@@ -101,6 +101,9 @@
     <Compile Include="Proprietario.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Taxa.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -122,6 +125,9 @@
     <Compile Include="views\frmProprietario.Designer.cs">
       <DependentUpon>frmProprietario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -145,24 +151,11 @@
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="App.Config" />
+    <None Include="Imovel.datasource" />
     <None Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Alguel.datasource" />
-    <None Include="Properties\DataSources\Form1.datasource" />
-    <None Include="Properties\DataSources\Imovel.datasource" />
-    <None Include="Properties\DataSources\Inquilino.datasource" />
-    <None Include="Properties\DataSources\Pagamento.datasource" />
-    <None Include="Properties\DataSources\Program.datasource" />
-    <None Include="Properties\DataSources\Proprietario.datasource" />
-    <None Include="Properties\DataSources\SegundoBI.Properties.Resources.datasource" />
-    <None Include="Properties\DataSources\SegundoBI.Properties.Settings.datasource" />
-    <None Include="Properties\DataSources\SegundoBI.views.frmImoveis.datasource" />
-    <None Include="Properties\DataSources\SegundoBI.views.frmInquilino.datasource" />
-    <None Include="Properties\DataSources\SegundoBI.views.frmProprietario.datasource" />
-    <None Include="Properties\DataSources\Sistema_ImoveisEntities.datasource" />
-    <None Include="Properties\DataSources\Taxa.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

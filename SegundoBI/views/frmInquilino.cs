@@ -16,5 +16,10 @@ namespace SegundoBI.views
         {
             InitializeComponent();
         }
+
+        private void frmInquilino_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,10 +42,10 @@
             this.ImoBtnVoltar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.frmProprietarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.frmProprietarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.imovelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvImo = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.imovelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImo)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox4
@@ -164,24 +164,24 @@
             this.button1.Text = "Novo";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // frmProprietarioBindingSource
+            // imovelBindingSource
             // 
-            this.frmProprietarioBindingSource.DataSource = typeof(SegundoBI.views.frmProprietario);
+            this.imovelBindingSource.DataSource = typeof(SegundoBI.Imovel);
             // 
-            // dataGridView1
+            // dgvImo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(575, 165);
-            this.dataGridView1.TabIndex = 24;
+            this.dgvImo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvImo.Location = new System.Drawing.Point(17, 85);
+            this.dgvImo.Name = "dgvImo";
+            this.dgvImo.Size = new System.Drawing.Size(575, 165);
+            this.dgvImo.TabIndex = 24;
             // 
             // frmImoveis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 325);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvImo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.ImoBtnVoltar);
@@ -197,8 +197,9 @@
             this.Controls.Add(this.label2);
             this.Name = "frmImoveis";
             this.Text = "frmImoveis";
-            ((System.ComponentModel.ISupportInitialize)(this.frmProprietarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmImoveis_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.imovelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,7 +220,21 @@
         private System.Windows.Forms.Button ImoBtnVoltar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.BindingSource frmProprietarioBindingSource;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imoIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imoTipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imoEnderecoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imoBairroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imoCidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imoIDProDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proprietarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.BindingSource imovelBindingSource;
+        private System.Windows.Forms.DataGridView dgvImo;
     }
 }

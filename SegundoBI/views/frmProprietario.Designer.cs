@@ -40,6 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,14 +57,14 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(73, 10);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(519, 20);
+            this.textBox1.Size = new System.Drawing.Size(524, 20);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(73, 36);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(519, 20);
+            this.textBox2.Size = new System.Drawing.Size(524, 20);
             this.textBox2.TabIndex = 3;
             // 
             // label2
@@ -94,7 +96,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(380, 62);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(212, 20);
+            this.textBox4.Size = new System.Drawing.Size(217, 20);
             this.textBox4.TabIndex = 7;
             // 
             // label4
@@ -126,7 +128,7 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(380, 92);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(212, 20);
+            this.textBox6.Size = new System.Drawing.Size(217, 20);
             this.textBox6.TabIndex = 11;
             // 
             // label6
@@ -138,11 +140,20 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "CPF";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 154);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(584, 159);
+            this.dataGridView1.TabIndex = 12;
+            // 
             // frmProprietario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 325);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox5);
@@ -157,6 +168,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmProprietario";
             this.Text = "frmProprietario";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +188,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

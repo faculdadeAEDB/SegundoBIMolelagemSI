@@ -16,6 +16,7 @@
         <AssociationConnector Association="Model.FK_Pagamento_Alguel" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_Imovel_Proprietario" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_Taxa_Pagamento" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="6.875" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

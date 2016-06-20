@@ -16,5 +16,10 @@ namespace SegundoBI
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            new views.frmImoveis().ShowDialog();
+        }
     }
 }
