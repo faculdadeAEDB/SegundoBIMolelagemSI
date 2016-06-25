@@ -39,13 +39,24 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.ImoBtnVoltar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.imovelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvImo = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.imovelBindingSource)).BeginInit();
+            this.imovelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnImoVoltar = new System.Windows.Forms.Button();
+            this.btnImoSalvar = new System.Windows.Forms.Button();
+            this.btnImoNovo = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alguelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proprietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imovelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox4
@@ -136,55 +147,145 @@
             this.textBox1.Size = new System.Drawing.Size(75, 20);
             this.textBox1.TabIndex = 19;
             // 
-            // ImoBtnVoltar
+            // dgvImo
             // 
-            this.ImoBtnVoltar.Location = new System.Drawing.Point(512, 270);
-            this.ImoBtnVoltar.Name = "ImoBtnVoltar";
-            this.ImoBtnVoltar.Size = new System.Drawing.Size(80, 43);
-            this.ImoBtnVoltar.TabIndex = 20;
-            this.ImoBtnVoltar.Text = "Voltar";
-            this.ImoBtnVoltar.UseVisualStyleBackColor = true;
-            this.ImoBtnVoltar.Click += new System.EventHandler(this.ImoBtnVoltar_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(421, 270);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 43);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Salvar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(326, 270);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 43);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Novo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dgvImo.AllowUserToAddRows = false;
+            this.dgvImo.AllowUserToDeleteRows = false;
+            this.dgvImo.AutoGenerateColumns = false;
+            this.dgvImo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvImo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn14,
+            this.alguelDataGridViewTextBoxColumn,
+            this.Proprietario,
+            this.btnEditar,
+            this.btnExcluir});
+            this.dgvImo.DataSource = this.imovelBindingSource;
+            this.dgvImo.Location = new System.Drawing.Point(17, 101);
+            this.dgvImo.Name = "dgvImo";
+            this.dgvImo.ReadOnly = true;
+            this.dgvImo.Size = new System.Drawing.Size(575, 212);
+            this.dgvImo.TabIndex = 24;
             // 
             // imovelBindingSource
             // 
             this.imovelBindingSource.DataSource = typeof(SegundoBI.Imovel);
             // 
-            // dgvImo
+            // btnImoVoltar
             // 
-            this.dgvImo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvImo.Location = new System.Drawing.Point(17, 85);
-            this.dgvImo.Name = "dgvImo";
-            this.dgvImo.Size = new System.Drawing.Size(575, 165);
-            this.dgvImo.TabIndex = 24;
+            this.btnImoVoltar.Location = new System.Drawing.Point(517, 69);
+            this.btnImoVoltar.Name = "btnImoVoltar";
+            this.btnImoVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnImoVoltar.TabIndex = 25;
+            this.btnImoVoltar.Text = "Voltar";
+            this.btnImoVoltar.UseVisualStyleBackColor = true;
+            this.btnImoVoltar.Click += new System.EventHandler(this.btnImoVoltar_Click);
+            // 
+            // btnImoSalvar
+            // 
+            this.btnImoSalvar.Location = new System.Drawing.Point(436, 70);
+            this.btnImoSalvar.Name = "btnImoSalvar";
+            this.btnImoSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnImoSalvar.TabIndex = 26;
+            this.btnImoSalvar.Text = "Salvar";
+            this.btnImoSalvar.UseVisualStyleBackColor = true;
+            // 
+            // btnImoNovo
+            // 
+            this.btnImoNovo.Location = new System.Drawing.Point(355, 70);
+            this.btnImoNovo.Name = "btnImoNovo";
+            this.btnImoNovo.Size = new System.Drawing.Size(75, 23);
+            this.btnImoNovo.TabIndex = 27;
+            this.btnImoNovo.Text = "Novo";
+            this.btnImoNovo.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Proprietario";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Proprietario";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "ImoID";
+            this.dataGridViewTextBoxColumn8.HeaderText = "ImoID";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "ImoTipo";
+            this.dataGridViewTextBoxColumn9.HeaderText = "ImoTipo";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "ImoEndereco";
+            this.dataGridViewTextBoxColumn10.HeaderText = "ImoEndereco";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "ImoBairro";
+            this.dataGridViewTextBoxColumn11.HeaderText = "ImoBairro";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "ImoCidade";
+            this.dataGridViewTextBoxColumn12.HeaderText = "ImoCidade";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "ImoIDPro";
+            this.dataGridViewTextBoxColumn14.HeaderText = "ImoIDPro";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // alguelDataGridViewTextBoxColumn
+            // 
+            this.alguelDataGridViewTextBoxColumn.DataPropertyName = "Alguel";
+            this.alguelDataGridViewTextBoxColumn.HeaderText = "Alguel";
+            this.alguelDataGridViewTextBoxColumn.Name = "alguelDataGridViewTextBoxColumn";
+            this.alguelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Proprietario
+            // 
+            this.Proprietario.DataPropertyName = "Proprietario";
+            this.Proprietario.HeaderText = "Proprietario";
+            this.Proprietario.Name = "Proprietario";
+            this.Proprietario.ReadOnly = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.HeaderText = "Editar";
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.ReadOnly = true;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.HeaderText = "Excluir";
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.ReadOnly = true;
             // 
             // frmImoveis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 325);
+            this.Controls.Add(this.btnImoNovo);
+            this.Controls.Add(this.btnImoSalvar);
+            this.Controls.Add(this.btnImoVoltar);
             this.Controls.Add(this.dgvImo);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.ImoBtnVoltar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -198,8 +299,8 @@
             this.Name = "frmImoveis";
             this.Text = "frmImoveis";
             this.Load += new System.EventHandler(this.frmImoveis_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.imovelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imovelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,9 +318,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button ImoBtnVoltar;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn imoIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imoTipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imoEnderecoDataGridViewTextBoxColumn;
@@ -234,7 +332,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.BindingSource imovelBindingSource;
         private System.Windows.Forms.DataGridView dgvImo;
+        private System.Windows.Forms.Button btnImoVoltar;
+        private System.Windows.Forms.Button btnImoSalvar;
+        private System.Windows.Forms.Button btnImoNovo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.BindingSource imovelBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alguelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Proprietario;
+        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn btnExcluir;
     }
 }

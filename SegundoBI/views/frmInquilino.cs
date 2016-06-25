@@ -17,9 +17,9 @@ namespace SegundoBI.views
             InitializeComponent();
         }
 
-        private void frmInquilino_Load(object sender, EventArgs e)
+        private void btnInqVoltar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

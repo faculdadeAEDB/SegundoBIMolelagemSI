@@ -25,8 +25,17 @@ namespace SegundoBI.views
         private void frmImoveis_Load(object sender, EventArgs e)
         {
             Sistema_ImoveisEntities dc = new Sistema_ImoveisEntities();
-            var imo = from Imovel in dc.Imovel join Proprietario in dc.Proprietario on Imovel.ImoIDPro equals Proprietario.ProID select Imovel;
-            dgvImo.DataSource = imo.ToList();
+            var imopro = (from Imovel in dc.Imovel join Proprietario in dc.Proprietario on Imovel.ImoIDPro equals Proprietario.ProID select Imovel).ToList();
+            foreach (var imopros in imopro)
+            {
+            }
+            dgvImo.DataSource = imopro;
+           
+        }
+
+        private void btnImoVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

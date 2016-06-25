@@ -60,12 +60,6 @@
     <Compile Include="Alguel.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Imovel.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -113,11 +107,23 @@
     <Compile Include="views\frmImoveis.Designer.cs">
       <DependentUpon>frmImoveis.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\frmInitial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmInitial.Designer.cs">
+      <DependentUpon>frmInitial.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\frmInquilino.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\frmInquilino.Designer.cs">
       <DependentUpon>frmInquilino.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmLocacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmLocacoes.Designer.cs">
+      <DependentUpon>frmLocacoes.cs</DependentUpon>
     </Compile>
     <Compile Include="views\frmProprietario.cs">
       <SubType>Form</SubType>
@@ -125,9 +131,6 @@
     <Compile Include="views\frmProprietario.Designer.cs">
       <DependentUpon>frmProprietario.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -140,8 +143,14 @@
     <EmbeddedResource Include="views\frmImoveis.resx">
       <DependentUpon>frmImoveis.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\frmInitial.resx">
+      <DependentUpon>frmInitial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\frmInquilino.resx">
       <DependentUpon>frmInquilino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmLocacoes.resx">
+      <DependentUpon>frmLocacoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmProprietario.resx">
       <DependentUpon>frmProprietario.cs</DependentUpon>
@@ -152,6 +161,7 @@
     </EntityDeploy>
     <None Include="App.Config" />
     <None Include="Imovel.datasource" />
+    <None Include="Inquilino.datasource" />
     <None Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
@@ -165,6 +175,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Proprietario.datasource" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
