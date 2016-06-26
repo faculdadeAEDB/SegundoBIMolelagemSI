@@ -92,32 +92,13 @@
     </Compile>
     <Compile Include="Partial\Alguel.cs" />
     <Compile Include="Partial\Imovel.cs" />
-    <Compile Include="Partial\Inquilino.cs" />
-    <Compile Include="Partial\Pagamento.cs" />
-    <Compile Include="Partial\Proprietario.cs" />
-    <Compile Include="Partial\Taxa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proprietario.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Taxa.cs">
       <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="views\frmImoveis.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\frmImoveis.Designer.cs">
-      <DependentUpon>frmImoveis.cs</DependentUpon>
-    </Compile>
-    <Compile Include="views\frmInquilino.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\frmInquilino.Designer.cs">
-      <DependentUpon>frmInquilino.cs</DependentUpon>
     </Compile>
     <Compile Include="views\frmProprietario.cs">
       <SubType>Form</SubType>
@@ -134,9 +115,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="views\frmInquilino.resx">
-      <DependentUpon>frmInquilino.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="views\frmProprietario.resx">
       <DependentUpon>frmProprietario.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,7 +122,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
     <None Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
@@ -158,6 +135,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -174,6 +154,7 @@
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
