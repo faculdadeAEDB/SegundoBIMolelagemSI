@@ -42,8 +42,11 @@
             this.txbCPFPro = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.grdProprietario = new System.Windows.Forms.DataGridView();
-            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.proprietarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnProVoltar = new System.Windows.Forms.Button();
+            this.btnProSalvar = new System.Windows.Forms.Button();
+            this.btnProNovo = new System.Windows.Forms.Button();
+            this.btnImovel = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,11 +55,8 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imovelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proprietarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnProVoltar = new System.Windows.Forms.Button();
-            this.btnProSalvar = new System.Windows.Forms.Button();
-            this.btnProNovo = new System.Windows.Forms.Button();
-            this.btnImovel = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdProprietario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proprietarioBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -159,13 +159,10 @@
             // 
             // grdProprietario
             // 
-            this.grdProprietario.AllowUserToAddRows = false;
             this.grdProprietario.AllowUserToDeleteRows = false;
             this.grdProprietario.AutoGenerateColumns = false;
             this.grdProprietario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProprietario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.btnEditar,
-            this.btnExcluir,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -173,7 +170,9 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
-            this.imovelDataGridViewTextBoxColumn});
+            this.imovelDataGridViewTextBoxColumn,
+            this.btnEditar,
+            this.btnExcluir});
             this.grdProprietario.DataSource = this.proprietarioBindingSource;
             this.grdProprietario.Location = new System.Drawing.Point(13, 154);
             this.grdProprietario.Name = "grdProprietario";
@@ -181,19 +180,49 @@
             this.grdProprietario.Size = new System.Drawing.Size(584, 159);
             this.grdProprietario.TabIndex = 12;
             // 
-            // btnEditar
+            // proprietarioBindingSource
             // 
-            this.btnEditar.HeaderText = "Editar";
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.ReadOnly = true;
-            this.btnEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.proprietarioBindingSource.DataSource = typeof(SegundoBI.Proprietario);
             // 
-            // btnExcluir
+            // btnProVoltar
             // 
-            this.btnExcluir.HeaderText = "Excluir";
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.ReadOnly = true;
+            this.btnProVoltar.Location = new System.Drawing.Point(521, 119);
+            this.btnProVoltar.Name = "btnProVoltar";
+            this.btnProVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnProVoltar.TabIndex = 13;
+            this.btnProVoltar.Text = "Voltar";
+            this.btnProVoltar.UseVisualStyleBackColor = true;
+            this.btnProVoltar.Click += new System.EventHandler(this.btnProVoltar_Click);
+            // 
+            // btnProSalvar
+            // 
+            this.btnProSalvar.Location = new System.Drawing.Point(440, 119);
+            this.btnProSalvar.Name = "btnProSalvar";
+            this.btnProSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnProSalvar.TabIndex = 14;
+            this.btnProSalvar.Text = "Salvar";
+            this.btnProSalvar.UseVisualStyleBackColor = true;
+            this.btnProSalvar.Click += new System.EventHandler(this.btnProSalvar_Click);
+            // 
+            // btnProNovo
+            // 
+            this.btnProNovo.Location = new System.Drawing.Point(359, 119);
+            this.btnProNovo.Name = "btnProNovo";
+            this.btnProNovo.Size = new System.Drawing.Size(75, 23);
+            this.btnProNovo.TabIndex = 28;
+            this.btnProNovo.Text = "Novo";
+            this.btnProNovo.UseVisualStyleBackColor = true;
+            this.btnProNovo.Click += new System.EventHandler(this.btnProNovo_Click);
+            // 
+            // btnImovel
+            // 
+            this.btnImovel.Location = new System.Drawing.Point(13, 119);
+            this.btnImovel.Name = "btnImovel";
+            this.btnImovel.Size = new System.Drawing.Size(96, 23);
+            this.btnImovel.TabIndex = 29;
+            this.btnImovel.Text = "Cadastrar Imóvel";
+            this.btnImovel.UseVisualStyleBackColor = true;
+            this.btnImovel.Click += new System.EventHandler(this.btnImovel_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -251,49 +280,19 @@
             this.imovelDataGridViewTextBoxColumn.Name = "imovelDataGridViewTextBoxColumn";
             this.imovelDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // proprietarioBindingSource
+            // btnEditar
             // 
-            this.proprietarioBindingSource.DataSource = typeof(SegundoBI.Proprietario);
+            this.btnEditar.HeaderText = "Editar";
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.ReadOnly = true;
+            this.btnEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // btnProVoltar
+            // btnExcluir
             // 
-            this.btnProVoltar.Location = new System.Drawing.Point(521, 119);
-            this.btnProVoltar.Name = "btnProVoltar";
-            this.btnProVoltar.Size = new System.Drawing.Size(75, 23);
-            this.btnProVoltar.TabIndex = 13;
-            this.btnProVoltar.Text = "Voltar";
-            this.btnProVoltar.UseVisualStyleBackColor = true;
-            this.btnProVoltar.Click += new System.EventHandler(this.btnProVoltar_Click);
-            // 
-            // btnProSalvar
-            // 
-            this.btnProSalvar.Location = new System.Drawing.Point(440, 119);
-            this.btnProSalvar.Name = "btnProSalvar";
-            this.btnProSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnProSalvar.TabIndex = 14;
-            this.btnProSalvar.Text = "Salvar";
-            this.btnProSalvar.UseVisualStyleBackColor = true;
-            this.btnProSalvar.Click += new System.EventHandler(this.btnProSalvar_Click);
-            // 
-            // btnProNovo
-            // 
-            this.btnProNovo.Location = new System.Drawing.Point(359, 119);
-            this.btnProNovo.Name = "btnProNovo";
-            this.btnProNovo.Size = new System.Drawing.Size(75, 23);
-            this.btnProNovo.TabIndex = 28;
-            this.btnProNovo.Text = "Novo";
-            this.btnProNovo.UseVisualStyleBackColor = true;
-            this.btnProNovo.Click += new System.EventHandler(this.btnProNovo_Click);
-            // 
-            // btnImovel
-            // 
-            this.btnImovel.Location = new System.Drawing.Point(13, 119);
-            this.btnImovel.Name = "btnImovel";
-            this.btnImovel.Size = new System.Drawing.Size(96, 23);
-            this.btnImovel.TabIndex = 29;
-            this.btnImovel.Text = "Cadastrar Imóvel";
-            this.btnImovel.UseVisualStyleBackColor = true;
-            this.btnImovel.Click += new System.EventHandler(this.btnImovel_Click);
+            this.btnExcluir.HeaderText = "Excluir";
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.ReadOnly = true;
             // 
             // frmProprietario
             // 
@@ -353,8 +352,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn proCidadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn proTelefoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn proCPFDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
-        private System.Windows.Forms.DataGridViewButtonColumn btnExcluir;
+        private System.Windows.Forms.BindingSource proprietarioBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -363,6 +361,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn imovelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource proprietarioBindingSource;
+        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn btnExcluir;
     }
 }

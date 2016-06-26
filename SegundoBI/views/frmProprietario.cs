@@ -18,6 +18,12 @@ namespace SegundoBI.views
             InitializeComponent();
         }
 
+
+        void Refresh(){
+            Sistema_ImoveisEntities dc = new Sistema_ImoveisEntities();
+            var prop = from Proprietario in dc.Proprietario select Proprietario;
+            grdProprietario.DataSource = prop.ToList();
+        }
         private void btnProVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -32,9 +38,7 @@ namespace SegundoBI.views
 
         private void frmProprietario_Load(object sender, EventArgs e)
         {
-            Sistema_ImoveisEntities dc = new Sistema_ImoveisEntities();
-            var prop = from Proprietario in dc.Proprietario select Proprietario;
-            grdProprietario.DataSource = prop.ToList();
+            Refresh();
         }
 
         private void btnProNovo_Click(object sender, EventArgs e)
@@ -47,9 +51,11 @@ namespace SegundoBI.views
             oProprietario.ProEndereco = txbEnderecoPro.Text;
             oProprietario.ProNome = txbNomePro.Text;
             oProprietario.ProTelefone = txbTelefonePro.Text;
-
+            oProprietario.incluir();
+            Refresh();
         }
 
+        
         private void btnProSalvar_Click(object sender, EventArgs e)
         {
 
