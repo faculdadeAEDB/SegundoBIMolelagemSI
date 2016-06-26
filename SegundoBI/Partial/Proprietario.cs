@@ -23,5 +23,16 @@ namespace SegundoBI
                 oDB.Entry(this).State = System.Data.Entity.EntityState.Modified;
             }
         }
+
+        public static void Excluir(int Codigo)
+        {
+            using (Sistema_ImoveisEntities oDB = new Sistema_ImoveisEntities())
+            {
+                Proprietario oProprietario = new Proprietario();
+                oDB.Entry(oProprietario).State = System.Data.Entity.EntityState.Deleted;
+                oDB.Proprietario.Remove(oProprietario);
+                oDB.SaveChanges();
+            }
+        }
     }
 }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SegundoBI
+namespace SegundoBI.views
 {
-    public partial class Form1 : Form
+    public partial class frmLocacoes : Form
     {
-        public Form1()
+        public frmLocacoes()
         {
             InitializeComponent();
         }
